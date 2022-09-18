@@ -1,0 +1,1 @@
+{"version":"0.1.0","name":"flashcards","dependencies":{"@rails/actioncable":{"version":"6.1.7"},"@rails/activestorage":{"version":"6.1.7"},"@rails/ujs":{"version":"6.1.7"},"@rails/webpacker":{"version":"5.4.3"},"turbolinks":{"version":"5.2.0"},"webpack-cli":{"version":"3.3.12"},"webpack":{"version":"4.46.0"}}}

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Редактирование</h1>
+
+<% if !@cards.blank? %>
+<table>
+  <thead>
+    <tr>
+      <th>Слово</th>
+      <th>Перевод</th>
+      <th>Группа</th>
+      <th>Скрыта до</th>
+      <th>Ошибок</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.description %></td>
+        <td><%= card.level %></td>
+        <td><%= card.lock_to && card.lock_to.strftime("%d.%m.%Y %H:%M:%S") %></td>
+        <td><%= card.attempts %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<p>Карточек еще нет. </p>
+<em>Нажмите 'Добавить', чтоб создать первую...</em>
+<br/> 
+<% end %>
+<br>
+
+<%= link_to "Главное меню", "/" %>
+> Редактирование >
+<%= link_to "Добавить", new_card_path %>
+

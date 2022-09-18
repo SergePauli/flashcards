@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flashcards:Изучение</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
+  </head>
+  <body>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+    </style>
+    <%= yield %>
+    <script>
+      function valid() {
+        var el = document.getElementById('description');
+        el.className = "show";  
+        el =  document.getElementById('show_description');   
+        el.className = "hidden";    
+        el =  document.getElementById('actions');    
+        el.className = "show";  
+      }      
+    </script>
+  </body>
+</html>

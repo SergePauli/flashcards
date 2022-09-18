@@ -1,0 +1,31 @@
+<h1>Изучение</h1>
+<p id="notice"><%= notice %></p>
+
+<% if @card.blank? %>
+  <% if @game_over %>
+    <h2>Карточек для изучения нет. Game Over!</h2>
+  <% else %>
+    <h2>Карточек для повторения нет. Вернитесь позже для
+продолжения.</h2>
+  <% end %>
+<% else %>
+<p>
+  <strong>Слово:</strong>
+  <%= @card.name %>
+</p>
+<div id="description" class="hidden">
+  <p>
+    <strong>Перевод:</strong>
+    <%= @card.description %>
+  </p>
+</div>
+<input id='show_description' type='button' value='Показать перевод' class ='actions' onclick='valid()'/>
+<br/>
+<div id='actions' class="hidden">
+  <%= link_to "Верно", { :code => "1", :id => @card.id }, method: :put %> 
+ |
+  <%= link_to "Ошибка", { :code => "2", :id => @card.id }, method: :put %>
+</div>
+<% end %>
+<br/>
+<%= link_to "Главное меню", "/" %> | <%= link_to "Назад", cards_path %>
